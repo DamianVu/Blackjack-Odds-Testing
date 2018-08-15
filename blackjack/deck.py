@@ -1,9 +1,10 @@
 
 import random
-from card import Card
+import blackjack.card_values
+from blackjack.card import Card
 
-cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"]
-suits = ["Spades", "Clubs", "Diamonds", "Hearts"]
+cards = blackjack.card_values.cards
+suits = blackjack.card_values.suits
 
 class Deck:
 	def __init__(self,	deck_count):
