@@ -40,4 +40,5 @@ class Hand:
 		return len(self.cards) == 2 and temp[0].card == temp[1].card
 
 	def add(self, card):
+		# Assert that this is only called with a card type
 		self.cards.add(card)

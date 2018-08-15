@@ -1,6 +1,7 @@
 
 class Card:
-	def __init__(self, card, suit):
+	# Suit is defaulted to N/A so tests don't need to worry about suit
+	def __init__(self, card, suit = "N/A"):
 		self.card = card
 		self.suit = suit
 
