@@ -19,6 +19,7 @@ def test_blackjack():
 def test_ace_calculation():
 	temp = Hand()
 	temp.add(Card("A"))
+	assert temp.has_ace()
 	assert temp.value() == 11
 	temp.add(Card("A"))
 	assert temp.value() == 12

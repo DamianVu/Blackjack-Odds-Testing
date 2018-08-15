@@ -2,3 +2,4 @@ __pycache__/*
 README.html
 .pytest_cache/*
 */__pycache__/*
+notes.txt
