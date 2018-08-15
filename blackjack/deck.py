@@ -1,10 +1,7 @@
 
 import random
-import blackjack.card_values
+from blackjack.card_values import cards, suits
 from blackjack.card import Card
-
-cards = blackjack.card_values.cards
-suits = blackjack.card_values.suits
 
 class Deck:
 	def __init__(self,	deck_count):
