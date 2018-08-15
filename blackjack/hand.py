@@ -18,6 +18,19 @@ class Hand:
                 sum += 10
         return sum
 
+    def is_soft_value(self):
+        # Check if we first have an ace
+        if self.has_ace():
+            # Check if our minimum value is less than our value
+            sum = 0
+            for card in self.cards:
+                if card.card == "A":
+                    sum += 1
+                else:
+                    sum += card.value()
+            return sum != self.value()
+        return False
+
     def list(self):
         if (len(self.cards) == 0):
             return "[]"

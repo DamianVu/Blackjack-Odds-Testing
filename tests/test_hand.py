@@ -32,6 +32,18 @@ def test_ace_calculation():
     temp.add(Card("A"))
     assert temp.value() == 12
 
+def test_for_soft_values():
+    temp = Hand()
+    temp.add(Card("4"))
+    temp.add(Card("A"))
+    assert temp.is_soft_value()
+    temp.add(Card("A"))
+    assert temp.is_soft_value()
+    temp.add(Card("4"))
+    assert temp.is_soft_value()
+    temp.add(Card("5"))
+    assert not temp.is_soft_value()
+
 from blackjack.card_values import cards
 
 def test_if_splits():
