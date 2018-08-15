@@ -20,14 +20,14 @@ class Hand:
 
 	def list(self):
 		if (len(self.cards) == 0):
-			print("[]")
+			return "[]"
 		else:
 			output = "["
 			for card in self.cards:
 				output = output + "\"" + card.card + " of " + card.suit + "\", "
 			output = output[:-2]
 			output = output + "]"
-			print(output)
+			return output
 
 	def is_blackjack(self):
 		return len(self.cards) == 2 and any(c.card == "A" for c in self.cards) and any(c.card == "10" or c.card == "J" or c.card == "Q" or c.card == "K" for c in self.cards)

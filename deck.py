@@ -26,7 +26,7 @@ class Deck:
 			output = output + "\"" + card.card + " of " + card.suit + "\", "
 		output = output[:-2]
 		output = output + "]"
-		print(output)
+		return output
 
 	def draw(self):
 		return self.cards.pop()
