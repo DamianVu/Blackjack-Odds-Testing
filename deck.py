@@ -7,18 +7,18 @@ suits = ["Spades", "Clubs", "Diamonds", "Hearts"]
 
 class Deck:
 	def __init__(self,	deck_count):
+		# Initializes the deck and adds a full set of cards
 		self.deck_count = deck_count
 		self.cards = []
 		for i in range(deck_count):
-			self.add_deck()
+			for c in cards:
+				for s in suits:
+					self.cards.append(Card(c, s))		
 
-	def shuffle(self):
-		random.shuffle(self.cards)
-
-	def add_deck(self):
-		for c in cards:
-			for s in suits:
-				self.cards.append(Card(c, s))
+	def shuffle(self, shuffles = 1):
+		# Shuffles deck X times or once by default
+		for i in range(shuffles):
+			random.shuffle(self.cards)
 
 	def list(self):
 		output = "["
@@ -27,3 +27,6 @@ class Deck:
 		output = output[:-2]
 		output = output + "]"
 		print(output)
+
+	def draw(self):
+		return self.cards.pop()
