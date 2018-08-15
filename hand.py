@@ -41,4 +41,3 @@ class Hand:
 
 	def add(self, card):
 		self.cards.add(card)
-
