@@ -37,12 +37,17 @@ def play():
 		player_hand.add(deck.draw())
 		playing = 1
 		player_bust = 0
+		player_blackjack = 0
 		while playing:
 			print()
 			print("Dealer shows: " + dealer_hand.list())
 			print("Your hand: " + player_hand.list())
 			print("Your current value: " + str(player_hand.value()))
 			print()
+			if player_hand.is_blackjack():
+				player_blackjack = 1
+				print("B L A C K J A C K !")
+				break
 			if player_hand.value() > 21:
 				player_bust = 1
 				print("You bust!")
@@ -57,6 +62,11 @@ def play():
 				player_hand.add(deck.draw())
 			elif action == "s":
 				playing = 0
+
+		if player_blackjack:
+			cash += bet
+			print("You win!")
+			continue
 
 		if player_bust:
 			print("Dealer wins!")
