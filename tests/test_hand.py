@@ -31,11 +31,11 @@ def test_ace_calculation():
 	temp.add(Card("A"))
 	assert temp.value() == 12
 
-import blackjack.card_values
+from blackjack.card_values import cards
 
 def test_if_splits():
 	# Test if we can split each duplicate hand
-	for card in blackjack.card_values.cards:
+	for card in cards:
 		temp = Hand()
 		temp.add(Card(card))
 		temp.add(Card(card))
@@ -43,7 +43,7 @@ def test_if_splits():
 
 def test_splitting():
 	# Test splitting each hand into two separate ones
-	for card in blackjack.card_values.cards:
+	for card in cards:
 		temp = Hand()
 		temp.add(Card(card))
 		temp.add(Card(card))
