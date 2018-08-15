@@ -4,13 +4,32 @@ class Hand:
 		self.cards = set()
 
 	def value(self):
+		# Value should only display the max value
 		sum = 0
-		if any(c.card == "A" for c in self.cards):
-			return "WE HAVE AN ACE"
-		else:
-			for card in self.cards:
+		aces = 0
+		for card in self.cards:
+			if card.card == "A":
+				aces += 1
+			else:
 				sum += card.value()
-			return sum
+		if aces > 0:
+			sum += aces
+			if sum < 12:
+				sum += 10
+		return sum
+
+	def list(self):
+		output = "["
+		for card in self.cards:
+			output = output + "\"" + card.card + " of " + card.suit + "\", "
+		output = output[:-2]
+		output = output + "]"
+		if (len(self.cards) == 0):
+			output = "[]"
+		print(output)
+
+	def is_blackjack(self):
+		return len(self.cards) == 2 and any(c.card == "A" for c in self.cards) and any(c.card == "10" or c.card == "J" or c.card == "Q" or c.card == "K" for c in self.cards)
 
 	def has_ace(self):
 		return any(c.card == "A" for c in self.cards)
@@ -21,3 +40,4 @@ class Hand:
 
 	def add(self, card):
 		self.cards.add(card)
+
