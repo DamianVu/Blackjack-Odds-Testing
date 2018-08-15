@@ -12,5 +12,12 @@ class Hand:
 				sum += card.value()
 			return sum
 
+	def has_ace(self):
+		return any(c.card == "A" for c in self.cards)
+
+	def can_be_split(self):
+		temp = list(self.cards)
+		return len(self.cards) == 2 and temp[0].card == temp[1].card
+
 	def add(self, card):
 		self.cards.add(card)
