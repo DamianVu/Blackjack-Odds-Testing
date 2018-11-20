@@ -13,3 +13,9 @@ def decision(player_hand, dealer_hand, dealer_hits_soft_17 = True, double_after_
     if player_hand.is_soft_value():
 
     # Otherwise, we have some hard value
+    if (player_hand.value() < 12):
+        return "H"
+    if (dealer_hand.value() > 6 and player_hand.value() < 17):
+        return "H"
+    # 
+
